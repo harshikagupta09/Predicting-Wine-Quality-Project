@@ -1,7 +1,8 @@
 #importing the packages
 from steganography.steganography import Steganography
-from Spy_details import Spy,spy,friends
+from Spy_details import*
 from datetime import datetime
+import csv
 
 print ('Let\'s start the spychat application.')
 
@@ -82,6 +83,21 @@ def add_friends():
         print
         ('Sorry! Invalid entry. We can\'t add spy with the details you provided')
     return(len(friends))
+
+def load_friends():
+    with open('friends.csv', 'rb') as friends_data:
+        read = csv.reader(friends_data)
+        for row in read:
+            spy = Spy(name=row[0], salutation=row[1], rating=row[2], age=row[3], is_online=row[4])
+            add_friends.append(spy)
+
+#function for loading chats
+def load_chats():
+    with open('chats.csv', 'rb') as chats_data:
+        read = csv.reader(chats_data)
+        for row in read:
+            chat = ChatMessage(name=row[0], message=row[1], isItYou=row[3])
+            add_friends().append(chat)
 
 ##########a function to select friends#########
 
