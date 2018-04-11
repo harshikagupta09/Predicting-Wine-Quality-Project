@@ -16,6 +16,7 @@ question = "Do you want to continue as " + spy.salutation + " " + spy.name + " (
 existing = raw_input(question)
 
 STATUS_MESSAGES=["Ritesh", "Kumar"]
+EMERGENCY_MESSAGES=["SOS","SAVE ME"]
 
 
 friends = []
